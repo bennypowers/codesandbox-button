@@ -1,0 +1,14 @@
+:host { display: block; }
+
+button {
+  background: none;
+  border: none;
+  transition: filter 0.2s ease-in-out;
+}
+
+button:hover,
+button:focus {
+  filter:
+    brightness(1.1)
+    drop-shadow(2px 2px 2px grey);
+}

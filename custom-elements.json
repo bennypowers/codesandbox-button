@@ -1,0 +1,94 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "codesandbox-button",
+      "description": "Custom Element that Shows a CodeSandbox demo when you click on it.",
+      "attributes": [
+        {
+          "name": "font-size",
+          "description": "font size",
+          "type": "number",
+          "default": "14"
+        },
+        {
+          "name": "hide-navigation",
+          "description": "when true, hides navigation in the iframe",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "sandbox-id",
+          "description": "five-character id of your sandbox",
+          "type": "String"
+        },
+        {
+          "name": "show-demo",
+          "description": "when true, shows the CodeSandbox instead of the button",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "module",
+          "description": "path to the default module to display",
+          "type": "String"
+        },
+        {
+          "name": "theme",
+          "type": "'light'|'dark'",
+          "default": "\"dark\""
+        },
+        {
+          "name": "view",
+          "type": "'editor'|'preview'"
+        }
+      ],
+      "properties": [
+        {
+          "name": "fontSize",
+          "attribute": "font-size",
+          "description": "font size",
+          "type": "number",
+          "default": "14"
+        },
+        {
+          "name": "hideNavigation",
+          "attribute": "hide-navigation",
+          "description": "when true, hides navigation in the iframe",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "sandboxId",
+          "attribute": "sandbox-id",
+          "description": "five-character id of your sandbox",
+          "type": "String"
+        },
+        {
+          "name": "showDemo",
+          "attribute": "show-demo",
+          "description": "when true, shows the CodeSandbox instead of the button",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "module",
+          "attribute": "module",
+          "description": "path to the default module to display",
+          "type": "String"
+        },
+        {
+          "name": "theme",
+          "attribute": "theme",
+          "type": "'light'|'dark'",
+          "default": "\"dark\""
+        },
+        {
+          "name": "view",
+          "attribute": "view",
+          "type": "'editor'|'preview'"
+        }
+      ]
+    }
+  ]
+}
