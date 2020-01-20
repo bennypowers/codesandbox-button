@@ -1,6 +1,6 @@
 {
   "name": "@power-elements/codesandbox-button",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Custom Element that Shows a CodeSandbox demo when you click on it.",
   "author": "codesandbox-button",
   "license": "MIT",
