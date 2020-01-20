@@ -4,8 +4,8 @@
   "description": "Custom Element that Shows a CodeSandbox demo when you click on it.",
   "author": "codesandbox-button",
   "license": "MIT",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "codesandbox-button.js",
+  "module": "codesandbox-button.js",
   "scripts": {
     "build:analyze:json": "wca analyze src/*.js --outFile custom-elements.json",
     "build:analyze:markdown": "wca analyze src/*.js --outFile README.md",
