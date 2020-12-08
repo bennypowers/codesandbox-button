@@ -36,19 +36,19 @@ export class CodesandboxButton extends LitElement {
   render() {
     return this.showDemo ? html`
       <iframe
-         src="${ifDefined(this._getIframeSrc())}"
+         src="${ifDefined(this.getIframeSrc())}"
          style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
          allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
          sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
        ></iframe>
     ` : html`
-      <button @click="${this._onClick}">
+      <button @click="${this.onClick}">
         <img alt="Edit on CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" />
       </button>
     `;
   }
 
-  _getIframeSrc() {
+  private getIframeSrc() {
     const { fontSize, hideNavigation, module, theme, view } = this;
     const hidenavigation = hideNavigation ? 1 : 0;
     const params = new URLSearchParams(Object.entries({
@@ -65,7 +65,7 @@ export class CodesandboxButton extends LitElement {
     return url.toString();
   }
 
-  _onClick() {
+  private onClick() {
     this.showDemo = true;
   }
 }
