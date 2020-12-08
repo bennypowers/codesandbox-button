@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "declaration": true,
-    "emitDeclarationOnly": true,
     "experimentalDecorators": true,
+    "target": "es2017",
+    "importHelpers": true,
+    "moduleResolution": "node",
     "outDir": "."
   },
   "include": [
@@ -12,5 +13,5 @@
   "exclude": [
     "node_modules",
     "**/*.test.js"
-  ],
+  ]
 }

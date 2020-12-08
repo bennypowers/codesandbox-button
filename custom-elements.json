@@ -3,6 +3,7 @@
   "tags": [
     {
       "name": "codesandbox-button",
+      "path": "./src/codesandbox-button.ts",
       "description": "Custom Element that Shows a CodeSandbox demo when you click on it.",
       "attributes": [
         {
@@ -20,7 +21,7 @@
         {
           "name": "sandbox-id",
           "description": "five-character id of your sandbox",
-          "type": "String"
+          "type": "string"
         },
         {
           "name": "show-demo",
@@ -31,16 +32,16 @@
         {
           "name": "module",
           "description": "path to the default module to display",
-          "type": "String"
+          "type": "string"
         },
         {
           "name": "theme",
-          "type": "'light'|'dark'",
+          "type": "\"light\" | \"dark\"",
           "default": "\"dark\""
         },
         {
           "name": "view",
-          "type": "'editor'|'preview'"
+          "type": "\"editor\" | \"preview\""
         }
       ],
       "properties": [
@@ -62,7 +63,7 @@
           "name": "sandboxId",
           "attribute": "sandbox-id",
           "description": "five-character id of your sandbox",
-          "type": "String"
+          "type": "string"
         },
         {
           "name": "showDemo",
@@ -75,18 +76,23 @@
           "name": "module",
           "attribute": "module",
           "description": "path to the default module to display",
-          "type": "String"
+          "type": "string"
         },
         {
           "name": "theme",
           "attribute": "theme",
-          "type": "'light'|'dark'",
+          "type": "\"light\" | \"dark\"",
           "default": "\"dark\""
         },
         {
           "name": "view",
           "attribute": "view",
-          "type": "'editor'|'preview'"
+          "type": "\"editor\" | \"preview\""
+        },
+        {
+          "name": "styles",
+          "type": "CSSResult",
+          "default": "\"style\""
         }
       ]
     }
