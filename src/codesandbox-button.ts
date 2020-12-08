@@ -65,15 +65,16 @@ export class CodesandboxButton extends LitElement {
   }
 
   private getIframeSrc() {
-    const { fontSize, hideNavigation, module, theme, view } = this;
-    const hidenavigation = hideNavigation ? 1 : 0;
+    const { hideNavigation, module, theme, view } = this;
+    const fontSize = this.fontSize.toString();
+    const hidenavigation = (hideNavigation ? 1 : 0).toString();
     const params = new URLSearchParams(Object.entries({
       fontSize,
       hidenavigation,
       module,
       theme,
       ...view && { view },
-    }).map(([x, y]) => [x, y.toString()]));
+    }));
     if (!this.sandboxId) return;
     const id = this.sandboxId?.split('-').pop();
     const url = new URL(`/embed/${id}`, 'https://codesandbox.io/');
