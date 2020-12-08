@@ -1,3 +1,6 @@
+import { css } from 'lit-element';
+
+export default css`
 :host { display: block; }
 
 button {
@@ -12,3 +15,4 @@ button:focus {
     brightness(1.1)
     drop-shadow(2px 2px 2px grey);
 }
+`;

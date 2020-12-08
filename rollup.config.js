@@ -1,5 +1,3 @@
-import commonjs from '@rollup/plugin-commonjs';
-import litcss from 'rollup-plugin-lit-css';
 import resolve from '@rollup/plugin-node-resolve';
 import esbuild from 'rollup-plugin-esbuild';
 import pkg from './package.json';
@@ -13,15 +11,12 @@ export default {
   input: 'src/codesandbox-button.ts',
   external,
   output: {
-    dir: '.',
+    file: './codesandbox-button.js',
     format: 'es',
-    chunkFileNames: '[name].js',
     sourcemap: true,
   },
   plugins: [
-    esbuild({ ts: true }),
-    litcss(),
-    commonjs(),
     resolve(),
+    esbuild({ ts: true }),
   ],
 };

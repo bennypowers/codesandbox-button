@@ -19,6 +19,8 @@
 /_site/
 /dist/
 /codesandbox-button.js
-/codesandbox-button.js.map
+/codesandbox-button.css.js
+/codesandbox-button.css.d.ts
+*.js.map
 /*.d.ts
 /*.tgz
