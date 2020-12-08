@@ -1,6 +1,5 @@
-import { LitElement, customElement, html, property } from 'lit-element';
+import { LitElement, css, customElement, html, property } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
-import style from './codesandbox-button.css';
 
 /**
  * Custom Element that Shows a CodeSandbox demo when you click on it.
@@ -31,7 +30,24 @@ export class CodesandboxButton extends LitElement {
 
   @property({ type: String }) view: 'editor'|'preview';
 
-  static styles = style;
+  static get styles() {
+    return css`
+      :host { display: block; }
+
+      button {
+        background: none;
+        border: none;
+        transition: filter 0.2s ease-in-out;
+      }
+
+      button:hover,
+      button:focus {
+        filter:
+          brightness(1.1)
+          drop-shadow(2px 2px 2px grey);
+      }
+    `;
+  }
 
   render() {
     return this.showDemo ? html`

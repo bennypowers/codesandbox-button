@@ -88,11 +88,6 @@
           "name": "view",
           "attribute": "view",
           "type": "\"editor\" | \"preview\""
-        },
-        {
-          "name": "styles",
-          "type": "CSSResult",
-          "default": "\"style\""
         }
       ]
     }
