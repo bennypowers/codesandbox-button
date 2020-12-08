@@ -1,4 +1,5 @@
 import { LitElement, customElement, html, property } from 'lit-element';
+import { ifDefined } from 'lit-html/directives/if-defined';
 import style from './codesandbox-button.css';
 
 /**
@@ -10,44 +11,32 @@ import style from './codesandbox-button.css';
  * ```
  */
 @customElement('codesandbox-button')
-class CodesandboxButton extends LitElement {
+export class CodesandboxButton extends LitElement {
   /** font size */
-  @property({ type: Number, attribute: 'font-size' })
-  fontSize = 14;
+  @property({ type: Number, attribute: 'font-size' }) fontSize = 14;
 
   /** when true, hides navigation in the iframe */
-  @property({ type: Boolean, attribute: 'hide-navigation' })
-  hideNavigation = false;
+  @property({ type: Boolean, attribute: 'hide-navigation' }) hideNavigation = false;
 
-  /**
-   * five-character id of your sandbox
-   * @type {String}
-   */
-  @property({ type: String, attribute: 'sandbox-id' })
-  sandboxId;
+  /** five-character id of your sandbox */
+  @property({ type: String, attribute: 'sandbox-id' }) sandboxId: string;
 
   /** when true, shows the CodeSandbox instead of the button */
-  @property({ type: Boolean, attribute: 'show-demo', reflect: true })
-  showDemo = false;
+  @property({ type: Boolean, attribute: 'show-demo', reflect: true }) showDemo = false;
 
-  /**
-   * path to the default module to display
-   * @type {String}
-   */
-  @property({ type: String }) module;
+  /** path to the default module to display */
+  @property({ type: String }) module: string;
 
-  /** @type {'light'|'dark'} */
-  @property({ type: String }) theme = 'dark';
+  @property({ type: String }) theme: 'light'|'dark' = 'dark';
 
-  /** @type {'editor'|'preview'} */
-  @property({ type: String }) view;
+  @property({ type: String }) view: 'editor'|'preview';
 
   static styles = style;
 
   render() {
     return this.showDemo ? html`
       <iframe
-         src="${this._getIframeSrc()}"
+         src="${ifDefined(this._getIframeSrc())}"
          style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
          allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
          sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
@@ -68,8 +57,9 @@ class CodesandboxButton extends LitElement {
       module,
       theme,
       ...view && { view },
-    }));
-    const id = this.sandboxId.split('-').pop();
+    }).map(([x, y]) => [x, y.toString()]));
+    if (!this.sandboxId) return;
+    const id = this.sandboxId?.split('-').pop();
     const url = new URL(`/embed/${id}`, 'https://codesandbox.io/');
     url.search = params.toString();
     return url.toString();
