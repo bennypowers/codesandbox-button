@@ -59,7 +59,9 @@ export class CodesandboxButton extends LitElement {
        ></iframe>
     ` : html`
       <button @click="${this.onClick}">
-        <img alt="Edit on CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" />
+        <slot name="button">
+          <img alt="Edit on CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" />
+        </slot>
       </button>
     `;
   }
