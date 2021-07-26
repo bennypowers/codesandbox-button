@@ -1,93 +1,177 @@
 {
-  "version": "experimental",
-  "tags": [
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
     {
-      "name": "codesandbox-button",
-      "path": "./src/codesandbox-button.ts",
-      "description": "Custom Element that Shows a CodeSandbox demo when you click on it.",
-      "attributes": [
+      "kind": "javascript-module",
+      "path": "codesandbox-button.js",
+      "declarations": [
         {
-          "name": "font-size",
-          "description": "font size",
-          "type": "number",
-          "default": "14"
-        },
-        {
-          "name": "hide-navigation",
-          "description": "when true, hides navigation in the iframe",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "sandbox-id",
-          "description": "five-character id of your sandbox",
-          "type": "string"
-        },
-        {
-          "name": "show-demo",
-          "description": "when true, shows the CodeSandbox instead of the button",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "module",
-          "description": "path to the default module to display",
-          "type": "string"
-        },
-        {
-          "name": "theme",
-          "type": "\"light\" | \"dark\"",
-          "default": "\"dark\""
-        },
-        {
-          "name": "view",
-          "type": "\"editor\" | \"preview\""
+          "kind": "class",
+          "description": "Custom Element that Shows a CodeSandbox demo when you click on it.",
+          "name": "CodesandboxButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "fontSize",
+              "type": {
+                "text": "number"
+              },
+              "default": "14",
+              "description": "font size",
+              "attribute": "font-size"
+            },
+            {
+              "kind": "field",
+              "name": "hideNavigation",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "when true, hides navigation in the iframe",
+              "attribute": "hide-navigation"
+            },
+            {
+              "kind": "field",
+              "name": "sandboxId",
+              "type": {
+                "text": "string"
+              },
+              "description": "five-character id of your sandbox",
+              "attribute": "sandbox-id"
+            },
+            {
+              "kind": "field",
+              "name": "showDemo",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "when true, shows the CodeSandbox instead of the button",
+              "attribute": "show-demo",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "module",
+              "type": {
+                "text": "string"
+              },
+              "description": "path to the default module to display",
+              "attribute": "module"
+            },
+            {
+              "kind": "field",
+              "name": "theme",
+              "type": {
+                "text": "'light'|'dark'"
+              },
+              "default": "'dark'",
+              "attribute": "theme"
+            },
+            {
+              "kind": "field",
+              "name": "view",
+              "type": {
+                "text": "'editor'|'preview'"
+              },
+              "attribute": "view"
+            },
+            {
+              "kind": "method",
+              "name": "getIframeSrc",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "onClick",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "font-size",
+              "type": {
+                "text": "number"
+              },
+              "default": "14",
+              "description": "font size",
+              "fieldName": "fontSize"
+            },
+            {
+              "name": "hide-navigation",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "when true, hides navigation in the iframe",
+              "fieldName": "hideNavigation"
+            },
+            {
+              "name": "sandbox-id",
+              "type": {
+                "text": "string"
+              },
+              "description": "five-character id of your sandbox",
+              "fieldName": "sandboxId"
+            },
+            {
+              "name": "show-demo",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "when true, shows the CodeSandbox instead of the button",
+              "fieldName": "showDemo"
+            },
+            {
+              "name": "module",
+              "type": {
+                "text": "string"
+              },
+              "description": "path to the default module to display",
+              "fieldName": "module"
+            },
+            {
+              "name": "theme",
+              "type": {
+                "text": "'light'|'dark'"
+              },
+              "default": "'dark'",
+              "fieldName": "theme"
+            },
+            {
+              "name": "view",
+              "type": {
+                "text": "'editor'|'preview'"
+              },
+              "fieldName": "view"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "codesandbox-button",
+          "customElement": true
         }
       ],
-      "properties": [
+      "exports": [
         {
-          "name": "fontSize",
-          "attribute": "font-size",
-          "description": "font size",
-          "type": "number",
-          "default": "14"
+          "kind": "js",
+          "name": "CodesandboxButton",
+          "declaration": {
+            "name": "CodesandboxButton",
+            "module": "codesandbox-button.js"
+          }
         },
         {
-          "name": "hideNavigation",
-          "attribute": "hide-navigation",
-          "description": "when true, hides navigation in the iframe",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "sandboxId",
-          "attribute": "sandbox-id",
-          "description": "five-character id of your sandbox",
-          "type": "string"
-        },
-        {
-          "name": "showDemo",
-          "attribute": "show-demo",
-          "description": "when true, shows the CodeSandbox instead of the button",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "module",
-          "attribute": "module",
-          "description": "path to the default module to display",
-          "type": "string"
-        },
-        {
-          "name": "theme",
-          "attribute": "theme",
-          "type": "\"light\" | \"dark\"",
-          "default": "\"dark\""
-        },
-        {
-          "name": "view",
-          "attribute": "view",
-          "type": "\"editor\" | \"preview\""
+          "kind": "custom-element-definition",
+          "name": "codesandbox-button",
+          "declaration": {
+            "name": "CodesandboxButton",
+            "module": "codesandbox-button.js"
+          }
         }
       ]
     }

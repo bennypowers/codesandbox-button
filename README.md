@@ -1,21 +1,53 @@
-# codesandbox-button
+## `codesandbox-button.js`:
 
-Custom Element that Shows a CodeSandbox demo when you click on it.
+### class: `CodesandboxButton`, `codesandbox-button`
 
-## Example
+#### Superclass
 
-```html
-<codesandbox-button sandbox-id="78bip" hide-navigation module="/src/main-component.js"></codesandbox-button>
-```
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
 
-## Properties
+#### Fields
 
-| Property         | Attribute         | Type                    | Default | Description                                      |
-|------------------|-------------------|-------------------------|---------|--------------------------------------------------|
-| `fontSize`       | `font-size`       | `number`                | 14      | font size                                        |
-| `hideNavigation` | `hide-navigation` | `boolean`               | false   | when true, hides navigation in the iframe        |
-| `module`         | `module`          | `string`                |         | path to the default module to display            |
-| `sandboxId`      | `sandbox-id`      | `string`                |         | five-character id of your sandbox                |
-| `showDemo`       | `show-demo`       | `boolean`               | false   | when true, shows the CodeSandbox instead of the button |
-| `theme`          | `theme`           | `"light" \| "dark"`     | "dark"  |                                                  |
-| `view`           | `view`            | `"editor" \| "preview"` |         |                                                  |
+| Name             | Privacy | Type                  | Default  | Description                                            | Inherited From |
+| ---------------- | ------- | --------------------- | -------- | ------------------------------------------------------ | -------------- |
+| `fontSize`       |         | `number`              | `14`     | font size                                              |                |
+| `hideNavigation` |         | `boolean`             | `false`  | when true, hides navigation in the iframe              |                |
+| `sandboxId`      |         | `string`              |          | five-character id of your sandbox                      |                |
+| `showDemo`       |         | `boolean`             | `false`  | when true, shows the CodeSandbox instead of the button |                |
+| `module`         |         | `string`              |          | path to the default module to display                  |                |
+| `theme`          |         | `'light'\|'dark'`     | `'dark'` |                                                        |                |
+| `view`           |         | `'editor'\|'preview'` |          |                                                        |                |
+
+#### Attributes
+
+| Name              | Field          | Inherited From |
+| ----------------- | -------------- | -------------- |
+| `font-size`       | fontSize       |                |
+| `hide-navigation` | hideNavigation |                |
+| `sandbox-id`      | sandboxId      |                |
+| `show-demo`       | showDemo       |                |
+| `module`          | module         |                |
+| `theme`           | theme          |                |
+| `view`            | view           |                |
+
+<details><summary>Private API</summary>
+
+#### Methods
+
+| Name           | Privacy | Description | Parameters | Return | Inherited From |
+| -------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `getIframeSrc` | private |             |            |        |                |
+| `onClick`      | private |             |            |        |                |
+
+</details>
+
+<hr/>
+
+### Exports
+
+| Kind                        | Name                 | Declaration       | Module                | Package |
+| --------------------------- | -------------------- | ----------------- | --------------------- | ------- |
+| `js`                        | `CodesandboxButton`  | CodesandboxButton | codesandbox-button.js |         |
+| `custom-element-definition` | `codesandbox-button` | CodesandboxButton | codesandbox-button.js |         |

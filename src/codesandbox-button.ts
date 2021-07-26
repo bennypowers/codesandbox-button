@@ -1,5 +1,6 @@
-import { LitElement, css, customElement, html, property } from 'lit-element';
-import { ifDefined } from 'lit-html/directives/if-defined';
+import { LitElement, css, html, TemplateResult } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 /**
  * Custom Element that Shows a CodeSandbox demo when you click on it.
@@ -30,26 +31,24 @@ export class CodesandboxButton extends LitElement {
 
   @property({ type: String }) view: 'editor'|'preview';
 
-  static get styles() {
-    return css`
-      :host { display: block; }
+  static styles = css`
+    :host { display: block; }
 
-      button {
-        background: none;
-        border: none;
-        transition: filter 0.2s ease-in-out;
-      }
+    button {
+      background: none;
+      border: none;
+      transition: filter 0.2s ease-in-out;
+    }
 
-      button:hover,
-      button:focus {
-        filter:
-          brightness(1.1)
-          drop-shadow(2px 2px 2px grey);
-      }
-    `;
-  }
+    button:hover,
+    button:focus {
+      filter:
+        brightness(1.1)
+        drop-shadow(2px 2px 2px grey);
+    }
+  `;
 
-  render() {
+  render(): TemplateResult {
     return this.showDemo ? html`
       <iframe
          src="${ifDefined(this.getIframeSrc())}"
